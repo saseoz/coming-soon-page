@@ -1,0 +1,224 @@
+:root {
+    --clr-pink:  hsl(0, 36%, 70%);
+    --clr-red:  hsl(0, 93%, 68%);
+    --clr-grayred:  hsl(0, 6%, 24%);
+    --clr-bg:  linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --clr-btn:  linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+img {
+    max-width: 100%;   
+    display: block;
+}
+body {
+    font-family: "Josefin Sans", sans-serif; /* 300, 400, 600 */
+    font-size: 16px;
+    display: grid;
+    min-height: 100vh;
+    justify-content: center;
+}
+/* img */
+.img-desktop {
+    display: none;
+}
+.img-mobile {
+    background-image: url('images/hero-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 385px;
+    display: flex;
+}
+/* logo */
+.logo {
+    padding: 1.8em;
+}
+.logo img {
+    max-width: 100px;
+}
+/* content */
+.container {
+    width: 100vw;
+}
+.main-bg {
+    height: 100%;
+    width: 100%;
+}
+.main-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.content-bg {
+    background: var(--clr-bg);
+    height: 100%;
+    width: 100%;
+}        
+.content {
+    text-align: center;
+    padding-top: 4.125em;
+    padding-bottom: 3rem;
+    padding-inline: 2em;
+    margin: 0 auto;
+    max-width: 500px;
+}
+.title {
+    font-size: 2.375rem;
+    color: var(--clr-grayred);
+    letter-spacing: 12px;
+    text-transform: uppercase; 
+    margin-bottom: .5em;
+    font-weight: 600;
+}
+.title span {
+    color: var(--clr-pink);
+    font-weight: 300;
+}
+.descr {
+    font-size: .9rem;
+    line-height: 1.6;
+    color: var(--clr-pink);
+    margin-bottom: 2.2em;
+}
+/* email */
+.email-container {
+    max-width: 350px;
+    margin: 0 auto;
+}
+form {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+#email {
+    width: 100%;
+    height: 46px;
+    padding-inline: 1.5em;
+    border: 1px solid var(--clr-pink);
+    border-radius: 1.7rem;
+    font: inherit;
+    font-weight: 400;
+    font-size: .9rem;
+    background-color: transparent;
+}
+input:focus {
+    outline: none;
+}
+#email::placeholder {
+    color: var(--clr-pink);
+}
+.error {
+    position: absolute;
+    top: 50%;
+    right: 90px;
+    transform: translateY(-50%);
+    display: none;
+}
+.btn {
+    max-width: 446px;
+    position: absolute;
+    height: 100%;
+    width: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    cursor: pointer;
+    border: none;
+    background: var(--clr-btn);
+    box-shadow: 0px 5px 20px hsl(0, 51%, 82%);
+    border-radius: 1.5rem;
+}
+.btn:hover {
+    background: linear-gradient(135deg, hsla(0, 80%, 86%, 0.683), hsla(0, 74%, 74%, 0.614));
+}
+.error-text {
+    margin-top: .6em;
+    color: var(--clr-red);
+    font-weight: 400;
+    font-size: .9rem;
+    display: none;
+}
+/* hide-show */
+.error.show  {
+    display: inline;
+}
+.error-text.show  {
+    display: block;
+}
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+    /* img */
+    .img-mobile {
+        display: none;
+    }
+    .img-desktop {
+        width: 42%;
+        display: flex;
+        background-image: url('images/hero-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /* logo */
+    .logo {
+        padding: unset;
+        padding-top: 4.125em;
+    }
+    .logo img {
+        max-width: 166px;
+    }
+    /* content */
+    .main-bg {
+        background-image: url('images/bg-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 58%;  
+    }
+    .main-wrap {
+        width: fit-content;
+        max-width: 450px;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    .content-bg {
+        background: unset;
+    }  
+    .content {
+        margin-top: 8em;
+        text-align: left;
+        padding-top: unset;
+        padding-inline: unset;
+        max-width: unset;
+    }
+    .title {
+        font-size: 3.9rem;   
+    }
+    .descr {
+        font-size: 1rem;
+    }
+    /* email */
+    .email-container {
+        margin: unset;
+        max-width: 443px;
+    }
+    #email {
+        background-color: transparent;
+        height: 50px;
+    }
+    .error {
+        width: 65px;
+    }
+    .btn {
+        width: 100px;
+    }
+    .error-text {
+        padding-left: 1rem;
+    }
+}
